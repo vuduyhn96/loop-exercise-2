@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hình Chữ Nhật</title>
+    <style>
+        #rectangle {
+            font-family: monospace;
+            white-space: pre;
+        }
+    </style>
+</head>
+
+<body>
+<h2>Hình Chữ Nhật</h2>
+<div id="rectangle"></div>
+<script>
+    function inHinhChuNhat() {
+        let width = parseInt(prompt("Nhập chiều rộng của hình chữ nhật:"));
+        let height = parseInt(prompt("Nhập chiều cao của hình chữ nhật:"));
+
+        if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
+            alert("Vui lòng nhập chiều rộng và chiều cao là số nguyên dương.");
+            return;
+        }
+        let rectangleOutput = "";
+        for (let i = 1; i <= height; i++) {
+            for (let j = 1; j <= width; j++) {
+                rectangleOutput += "* ";
+            }
+            rectangleOutput += "\n";
+        }
+        document.getElementById("rectangle").innerText = rectangleOutput;
+    }
+</script>
+
+<button onclick="inHinhChuNhat()">In Hình Chữ Nhật</button>
+</body>
+
+</html>

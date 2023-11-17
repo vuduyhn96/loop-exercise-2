@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tính Giai Thừa</title>
+</head>
+<body>
+<h2>Tính Giai Thừa</h2>
+<label for="inputNumber">Nhập số nguyên dương:</label>
+<input type="number" id="inputNumber" min="0">
+<button onclick="tinhGiaiThua()">Tính Giai Thừa</button>
+<p id="result"></p>
+<script>
+    function tinhGiaiThua() {
+        let inputNumber = document.getElementById("inputNumber").value;
+        if (isNaN(inputNumber) || inputNumber <= 0) {
+            alert("Vui lòng nhập một số nguyên dương.");
+            return;
+        }
+        let giaiThua = 1;
+        for (let i = 1; i <= inputNumber; i++) {
+            giaiThua *= i;
+        }
+        document.getElementById("result").innerHTML = "Giai thừa của " + inputNumber + " là: " + giaiThua;
+    }
+</script>
+</body>
+</html>
